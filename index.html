@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<title>GlanG the Mobster · version en ligne</title>
+<style>
+html,body{height:100%;margin:0;background:#07130f}
+/* GlanG the Mobster · page « Nouveau mot de passe » · style Palace
+   Polices hébergées avec la page (pas d'appel à Google Fonts : rien ne part vers un tiers). */
+@font-face{font-family:"Big Shoulders";src:url("polices/BigShoulders-600.woff") format("woff");font-weight:100 600;font-display:swap}
+@font-face{font-family:"Big Shoulders";src:url("polices/BigShoulders-700.woff") format("woff");font-weight:700;font-display:swap}
+@font-face{font-family:"Big Shoulders";src:url("polices/BigShoulders-800.woff") format("woff");font-weight:800 900;font-display:swap}
+@font-face{font-family:"Big Shoulders Inline";src:url("polices/BigShouldersInline.woff") format("woff");font-weight:800;font-display:swap}
+@font-face{font-family:"Limelight";src:url("polices/Limelight.woff") format("woff");font-display:swap}
+
+.gmWeb{--nuit:#07130f;--nuit2:#0d241d;--menthe:#5fe3b0;--blanc:#e6fff5;--or:#f2d48a;--gris:#8e9c97;--texte2:#a9cdbf;--attenue:#86a89b;--ligne:#1f6b51;--rouge:#ff5c4d;
+  container-type:inline-size;box-sizing:border-box;min-height:100%;margin:0;padding:48px 24px 40px;
+  background:radial-gradient(ellipse 70% 60% at 50% 40%,#0d241d 0%,#07130f 70%);color:var(--blanc);
+  font-family:"Big Shoulders","Arial Narrow",sans-serif;display:flex;flex-direction:column;align-items:center}
+.gmWeb *{box-sizing:border-box}
+.gmWeb .logo{width:min(440px,86%);height:auto;display:block;overflow:visible}
+.gmWeb .carte{position:relative;width:100%;max-width:600px;margin-top:28px;padding:44px 48px 36px;background:rgba(7,19,15,.94);
+  border:4px solid var(--menthe);box-shadow:0 0 40px rgba(95,227,176,.45)}
+.gmWeb .carte::before{content:"";position:absolute;inset:12px;border:2px solid var(--or);pointer-events:none}
+.gmWeb .coin{position:absolute;width:40px;height:40px;border:0 solid var(--or)}
+.gmWeb .coin::after{content:"";position:absolute;width:24px;height:24px;border:0 solid var(--or)}
+.gmWeb .c1{left:-14px;top:-14px;border-left-width:4px;border-top-width:4px}.gmWeb .c1::after{left:6px;top:6px;border-left-width:4px;border-top-width:4px}
+.gmWeb .c2{right:-14px;top:-14px;border-right-width:4px;border-top-width:4px}.gmWeb .c2::after{right:6px;top:6px;border-right-width:4px;border-top-width:4px}
+.gmWeb .c3{left:-14px;bottom:-14px;border-left-width:4px;border-bottom-width:4px}.gmWeb .c3::after{left:6px;bottom:6px;border-left-width:4px;border-bottom-width:4px}
+.gmWeb .c4{right:-14px;bottom:-14px;border-right-width:4px;border-bottom-width:4px}.gmWeb .c4::after{right:6px;bottom:6px;border-right-width:4px;border-bottom-width:4px}
+.gmWeb h1{margin:0;font-family:"Big Shoulders Inline","Big Shoulders",sans-serif;font-weight:800;font-size:46px;line-height:1;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--menthe);text-shadow:0 0 16px rgba(95,227,176,.55)}
+.gmWeb .filet{margin-top:18px;border-top:4px double var(--or)}
+.gmWeb .intro{margin:20px 0 0;font-size:22px;line-height:1.3;font-weight:500;color:var(--texte2)}
+.gmWeb .champ{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.gmWeb label{font-size:20px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--texte2)}
+.gmWeb .aide{font-size:18px;font-weight:600;color:var(--attenue);letter-spacing:0;text-transform:none}
+.gmWeb .tete{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.gmWeb .boite{height:64px;padding:0 10px 0 18px;display:flex;align-items:center;gap:14px;border-radius:10px;background:rgba(7,19,15,.85);border:3px solid var(--gris)}
+.gmWeb .boite svg{flex:0 0 auto}
+.gmWeb .boite input{flex:1 1 auto;min-width:0;height:100%;border:0;padding:0;background:transparent;font:700 28px "Big Shoulders",sans-serif;color:var(--blanc);caret-color:var(--menthe);outline:none}
+.gmWeb .boite input::placeholder{color:#5d7d71}
+.gmWeb .boite:focus-within{border-color:var(--menthe);box-shadow:0 0 20px rgba(95,227,176,.45)}
+.gmWeb .boite:focus-within .ico path{stroke:var(--menthe)}
+.gmWeb .champ.erreur label{color:var(--rouge)}
+.gmWeb .champ.erreur .boite{border-color:var(--rouge);box-shadow:0 0 18px rgba(255,92,77,.35)}
+.gmWeb .champ.erreur .ico path{stroke:var(--rouge)}
+.gmWeb .oeil{all:unset;width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.gmWeb .oeil:hover path{stroke:var(--menthe)}
+.gmWeb .oeil:focus-visible,.gmWeb .btn:focus-visible{outline:3px solid var(--or);outline-offset:5px}
+.gmWeb .msg{min-height:48px;margin-top:14px;display:flex;align-items:center;gap:12px;font-size:22px;line-height:1.25;font-weight:700;color:var(--texte2)}
+.gmWeb .msg.erreur{color:var(--rouge)}.gmWeb .msg.info{color:var(--menthe)}
+.gmWeb .msg svg,.gmWeb .tourne{flex:0 0 auto}
+.gmWeb .tourne{width:24px;height:24px;border-radius:50%;border:4px solid var(--ligne);border-top-color:var(--menthe);animation:gmWebTourne .9s linear infinite}
+@keyframes gmWebTourne{to{transform:rotate(360deg)}}
+.gmWeb .btn{all:unset;box-sizing:border-box;width:100%;height:68px;margin-top:8px;border-radius:34px;display:flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--menthe);color:var(--nuit);box-shadow:0 0 26px rgba(95,227,176,.5);font:800 28px "Big Shoulders",sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.gmWeb .btn[disabled]{background:#1f4a3c;color:var(--attenue);box-shadow:none;cursor:default}
+.gmWeb .fait{margin-top:26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.gmWeb .fait p{margin:0;font-size:28px;line-height:1.25;font-weight:700;color:var(--blanc)}
+.gmWeb .medaille{width:104px;height:104px;border-radius:50%;background:var(--nuit2);border:4px solid var(--menthe);box-shadow:0 0 0 6px var(--nuit),0 0 0 8px var(--or),0 0 26px rgba(95,227,176,.45);display:flex;align-items:center;justify-content:center}
+.gmWeb .pied{margin-top:26px;padding-top:16px;border-top:3px dotted rgba(242,212,138,.35);font-size:18px;line-height:1.35;font-weight:500;color:var(--attenue)}
+.gmWeb .bas{margin-top:22px;font-size:16px;font-weight:600;color:#5d7d71;letter-spacing:.06em}
+.gmWeb [hidden]{display:none !important}
+/* téléphone : une colonne, marges serrées, zones de 60 px */
+@container (max-width:520px){
+  .gmWeb .carte{padding:34px 24px 28px}
+  .gmWeb h1{font-size:28px;letter-spacing:.02em}
+  .gmWeb label{font-size:18px;letter-spacing:.1em}
+  .gmWeb .tete{flex-wrap:wrap;row-gap:2px}
+  .gmWeb .aide{font-size:17px}
+  .gmWeb .intro{font-size:20px}
+  .gmWeb .boite{height:60px}
+  .gmWeb .btn{height:64px;font-size:26px}
+  .gmWeb .msg{font-size:20px}
+}
+
+</style>
+</head>
+<body>
+<main class="gmWeb">
+  <svg class="logo" role="img" aria-label="GlanG the Mobster" viewBox="0 0 1100 360">
+    <g opacity=".32" stroke="#f2d48a" stroke-width="2"><line x1="550" y1="262" x2="46" y2="187"/><line x1="550" y1="262" x2="79" y2="134"/><line x1="550" y1="262" x2="129" y2="86"/><line x1="550" y1="262" x2="194" y2="43"/><line x1="550" y1="262" x2="271" y2="9"/><line x1="550" y1="262" x2="359" y2="-17"/><line x1="550" y1="262" x2="453" y2="-33"/><line x1="550" y1="262" x2="550" y2="-38"/><line x1="550" y1="262" x2="647" y2="-33"/><line x1="550" y1="262" x2="741" y2="-17"/><line x1="550" y1="262" x2="829" y2="9"/><line x1="550" y1="262" x2="906" y2="43"/><line x1="550" y1="262" x2="971" y2="86"/><line x1="550" y1="262" x2="1021" y2="134"/><line x1="550" y1="262" x2="1054" y2="187"/></g>
+    <text x="550" y="206" text-anchor="middle" font-family="Limelight, serif" font-size="200" fill="#0d241d" stroke="#5fe3b0" stroke-width="7" stroke-linejoin="round" style="filter:drop-shadow(0 0 10px rgba(95,227,176,.7))">GlanG</text>
+    <text x="550" y="206" text-anchor="middle" font-family="Limelight, serif" font-size="200" fill="none" stroke="#e6fff5" stroke-width="2" stroke-linejoin="round">GlanG</text>
+    <line x1="330" y1="232" x2="462" y2="232" stroke="#ff6ec7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="484" y1="232" x2="616" y2="232" stroke="#4a80ff" stroke-width="6" stroke-linecap="round"/>
+    <line x1="638" y1="232" x2="770" y2="232" stroke="#c8ff4d" stroke-width="6" stroke-linecap="round"/>
+    <rect x="300" y="256" width="500" height="80" fill="#07130f" stroke="#f2d48a" stroke-width="3"/>
+    <rect x="308" y="264" width="484" height="64" fill="none" stroke="#f2d48a" stroke-width="1.5" opacity=".7"/>
+    <path d="M300 270 H288 V282 H276 V310 H288 V322 H300 M800 270 H812 V282 H824 V310 H812 V322 H800" fill="none" stroke="#f2d48a" stroke-width="3"/>
+    <polygon points="250,296 262,284 274,296 262,308" fill="#f2d48a"/><polygon points="826,296 838,284 850,296 838,308" fill="#f2d48a"/>
+    <text x="556" y="314" text-anchor="middle" font-family="'Big Shoulders Inline','Big Shoulders',sans-serif" font-weight="800" font-size="58" letter-spacing="13" fill="#f2d48a">THE MOBSTER</text>
+  </svg>
+
+  <section class="carte" aria-labelledby="gmWebTitre">
+    <span class="coin c1" aria-hidden="true"></span><span class="coin c2" aria-hidden="true"></span><span class="coin c3" aria-hidden="true"></span><span class="coin c4" aria-hidden="true"></span>
+    <h1 id="gmWebTitre">Compte confirmé</h1>
+    <div class="filet" aria-hidden="true"></div>
+    <div class="fait" id="gmWebFait">
+      <span class="medaille" aria-hidden="true"><svg viewBox="0 0 48 48" width="56" height="56"><path d="M10 25 L19 34 L38 14" fill="none" stroke="#5fe3b0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <p id="gmWebTexte">Ton e-mail est confirmé : retourne dans le jeu et connecte-toi.</p>
+    </div>
+    <p class="pied">Tu n’as rien demandé ? Ignore ce message : aucun compte n’est ouvert sans confirmation.</p>
+  </section>
+  <p class="bas">GLANG THE MOBSTER · VERSION EN LIGNE</p>
+</main>
+
+<script>
+(function () {
+  // Lien de mot de passe oublié : la page dédiée, avec l'ancre (jeton). Lien périmé : message.
+  var p = new URLSearchParams(location.hash.replace(/^#/, ''));
+  if (p.get('type') === 'recovery') { location.replace('nouveau_mot_de_passe.html' + location.hash); return; }
+  if (p.get('error_code') || p.get('error')) {
+    document.getElementById('gmWebTitre').textContent = 'Lien expiré';
+    document.getElementById('gmWebTexte').textContent = 'Ce lien a expiré ou a déjà servi : essaie de te connecter dans le jeu.';
+  }
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+})();
+</script>
+</body>
+</html>
