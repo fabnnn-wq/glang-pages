@@ -78,6 +78,8 @@ html,body{height:100%;margin:0;background:#07130f}
   .gmWeb .msg{font-size:20px}
 }
 
+.gmWeb .langue{all:unset;cursor:pointer;color:var(--menthe);text-decoration:underline;text-underline-offset:4px}
+.gmWeb .langue:hover{color:var(--blanc)}.gmWeb .langue:focus-visible{outline:3px solid var(--or);outline-offset:4px}
 </style>
 </head>
 <body>
@@ -108,12 +110,14 @@ html,body{height:100%;margin:0;background:#07130f}
   </section>
   <p class="bas">GLANG THE MOBSTER · VERSION EN LIGNE</p>
 </main>
+<script src="glang_langue.js"></script>
 
 <script>
 (function () {
-  // Lien de mot de passe oublié : la page dédiée, avec l'ancre (jeton). Lien périmé : message.
+  // Lien de mot de passe oublié : la page dédiée, avec l'ancre (jeton) et la langue (?lang=).
+  // Lien périmé : message.
   var p = new URLSearchParams(location.hash.replace(/^#/, ''));
-  if (p.get('type') === 'recovery') { location.replace('nouveau_mot_de_passe.html' + location.hash); return; }
+  if (p.get('type') === 'recovery') { location.replace('nouveau_mot_de_passe.html' + location.search + location.hash); return; }
   if (p.get('error_code') || p.get('error')) {
     document.getElementById('gmWebTitre').textContent = 'Lien expiré';
     document.getElementById('gmWebTexte').textContent = 'Ce lien a expiré ou a déjà servi : essaie de te connecter dans le jeu.';
