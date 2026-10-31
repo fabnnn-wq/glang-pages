@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,6 +89,8 @@ html,body{height:100%;margin:0;background:#07130f}
 .gmWeb .afaire{color:var(--or);font-weight:700}
 .gmWeb .brouillon{margin-top:18px;padding:12px 16px;border:2px dashed var(--or);color:var(--or);font-size:19px;font-weight:700}
 .gmWeb .langues{margin-top:20px;display:flex;gap:18px;font-size:20px;font-weight:700}
+.gmWeb .langues.haut{margin:0 0 18px;justify-content:flex-end}
+.gmWeb .langue.actif{color:var(--or);text-decoration:none;cursor:default}
 .gmWeb a{color:var(--menthe)}
 </style>
 </head>
@@ -108,34 +110,8 @@ html,body{height:100%;margin:0;background:#07130f}
     <text x="556" y="314" text-anchor="middle" font-family="'Big Shoulders Inline','Big Shoulders',sans-serif" font-weight="800" font-size="58" letter-spacing="13" fill="#f2d48a">THE MOBSTER</text>
   </svg>
   <div class="carte"><span class="coin c1"></span><span class="coin c2"></span><span class="coin c3"></span><span class="coin c4"></span>
-<section lang="fr" data-lang="fr">
-<h1>Confidentialité</h1>
-<div class="filet"></div>
-<p class="intro">Mise à jour : 31 octobre 2026.</p>
-<p>GlanG the Mobster se joue sans compte. Un compte ne sert qu'à la <b>version en ligne</b> : classements entre joueurs, Elo, reprise d'une partie classée sur un autre appareil.</p>
-<h2>Qui est responsable</h2>
-<p><b>Strategeman</b>, éditeur de GlanG the Mobster. Contact : <a href="mailto:glangmobster@gmail.com">glangmobster@gmail.com</a>.</p>
-<h2>Ce qui est enregistré</h2>
-<ul>
-<li><b>Ton adresse e-mail</b> et ton <b>mot de passe</b> (stocké sous forme chiffrée, que personne ne peut lire).</li>
-<li><b>Ton pseudo</b>, visible des autres joueurs dans les classements.</li>
-<li><b>Tes parties classées</b> : date de la ville, personnage, version du jeu, début et fin, argent final, rang, élimination, la sauvegarde du tour en cours, et l'enregistrement de la partie (il sert à la vérifier et à la rejouer comme adversaire « fantôme » pour les autres joueurs).</li>
-<li>Sur ton appareil seulement : ta session de connexion, tes options et tes parties non classées.</li>
-</ul>
-<p>Pas de publicité, pas de cookie publicitaire, pas d'outil de mesure d'audience. Les polices des pages sont hébergées avec elles : rien ne part vers un service tiers.</p>
-<h2>Pourquoi</h2>
-<p>Uniquement pour faire fonctionner la version en ligne que tu demandes en créant un compte : te connecter, établir les classements, reprendre une partie, envoyer les e-mails de confirmation et de mot de passe oublié.</p>
-<h2>Qui y a accès</h2>
-<p>Les comptes et les parties sont hébergés par <b>Supabase</b> (serveurs dans l'Union européenne). Les e-mails du compte partent de l'adresse du jeu, par le service d'envoi de Gmail (Google). Les autres joueurs voient ton pseudo, ton personnage et tes résultats, jamais ton e-mail. Rien n'est vendu ni cédé.</p>
-<h2>Combien de temps</h2>
-<p>Tant que ton compte existe. Dans le jeu, <b>Compte › Supprimer mon compte</b> efface tout de suite ton compte, ton pseudo et toutes tes parties classées.</p>
-<h2>Tes droits</h2>
-<p>Tu peux demander à consulter, corriger, exporter ou effacer tes données, ou t'opposer à leur traitement, en écrivant à <a href="mailto:glangmobster@gmail.com">glangmobster@gmail.com</a>. Tu peux aussi saisir la CNIL (cnil.fr).</p>
-<h2>Âge</h2>
-<p>Il faut avoir <b>16 ans ou plus</b> pour créer un compte. Le jeu sans compte est ouvert à tous.</p>
-<h2>La page du jeu</h2>
-<p>La version navigateur est hébergée par itch.io, qui a ses propres règles de confidentialité.</p>
-</section>
+  <div class="langues haut"><button class="langue" data-choix="en">English</button><button class="langue" data-choix="fr">Français</button></div>
+
 <section lang="en" data-lang="en">
 <h1>Privacy</h1>
 <div class="filet"></div>
@@ -164,19 +140,47 @@ html,body{height:100%;margin:0;background:#07130f}
 <h2>The game page</h2>
 <p>The browser edition is hosted by itch.io, which has its own privacy rules.</p>
 </section>
-  <div class="langues"><button class="langue" data-choix="fr">Français</button><button class="langue" data-choix="en">English</button></div>
+<section lang="fr" data-lang="fr">
+<h1>Confidentialité</h1>
+<div class="filet"></div>
+<p class="intro">Mise à jour : 31 octobre 2026.</p>
+<p>GlanG the Mobster se joue sans compte. Un compte ne sert qu'à la <b>version en ligne</b> : classements entre joueurs, Elo, reprise d'une partie classée sur un autre appareil.</p>
+<h2>Qui est responsable</h2>
+<p><b>Strategeman</b>, éditeur de GlanG the Mobster. Contact : <a href="mailto:glangmobster@gmail.com">glangmobster@gmail.com</a>.</p>
+<h2>Ce qui est enregistré</h2>
+<ul>
+<li><b>Ton adresse e-mail</b> et ton <b>mot de passe</b> (stocké sous forme chiffrée, que personne ne peut lire).</li>
+<li><b>Ton pseudo</b>, visible des autres joueurs dans les classements.</li>
+<li><b>Tes parties classées</b> : date de la ville, personnage, version du jeu, début et fin, argent final, rang, élimination, la sauvegarde du tour en cours, et l'enregistrement de la partie (il sert à la vérifier et à la rejouer comme adversaire « fantôme » pour les autres joueurs).</li>
+<li>Sur ton appareil seulement : ta session de connexion, tes options et tes parties non classées.</li>
+</ul>
+<p>Pas de publicité, pas de cookie publicitaire, pas d'outil de mesure d'audience. Les polices des pages sont hébergées avec elles : rien ne part vers un service tiers.</p>
+<h2>Pourquoi</h2>
+<p>Uniquement pour faire fonctionner la version en ligne que tu demandes en créant un compte : te connecter, établir les classements, reprendre une partie, envoyer les e-mails de confirmation et de mot de passe oublié.</p>
+<h2>Qui y a accès</h2>
+<p>Les comptes et les parties sont hébergés par <b>Supabase</b> (serveurs dans l'Union européenne). Les e-mails du compte partent de l'adresse du jeu, par le service d'envoi de Gmail (Google). Les autres joueurs voient ton pseudo, ton personnage et tes résultats, jamais ton e-mail. Rien n'est vendu ni cédé.</p>
+<h2>Combien de temps</h2>
+<p>Tant que ton compte existe. Dans le jeu, <b>Compte › Supprimer mon compte</b> efface tout de suite ton compte, ton pseudo et toutes tes parties classées.</p>
+<h2>Tes droits</h2>
+<p>Tu peux demander à consulter, corriger, exporter ou effacer tes données, ou t'opposer à leur traitement, en écrivant à <a href="mailto:glangmobster@gmail.com">glangmobster@gmail.com</a>. Tu peux aussi saisir la CNIL (cnil.fr).</p>
+<h2>Âge</h2>
+<p>Il faut avoir <b>16 ans ou plus</b> pour créer un compte. Le jeu sans compte est ouvert à tous.</p>
+<h2>La page du jeu</h2>
+<p>La version navigateur est hébergée par itch.io, qui a ses propres règles de confidentialité.</p>
+</section>
   </div>
   <div class="bas">GLANG THE MOBSTER</div>
 </main>
 <script>
 (function(){
   var q=new URLSearchParams(location.search).get('lang');
-  var l=q||(function(){try{return localStorage.getItem('glang_langue')}catch(e){return null}})()||((navigator.language||'fr').toLowerCase().indexOf('fr')===0?'fr':'en');
+  var l=q||(function(){try{return localStorage.getItem('glang_langue')}catch(e){return null}})()||'en';
   function show(x){document.querySelectorAll('[data-lang]').forEach(function(s){s.hidden=s.getAttribute('data-lang')!==x});
     document.documentElement.lang=x;document.title=x==='fr'?'Confidentialité · GlanG the Mobster':'Privacy · GlanG the Mobster';
+    document.querySelectorAll('[data-choix]').forEach(function(b){b.classList.toggle('actif',b.getAttribute('data-choix')===x)});
     try{localStorage.setItem('glang_langue',x)}catch(e){}}
   document.querySelectorAll('[data-choix]').forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-choix'))})});
-  show(l==='en'?'en':'fr');
+  show(l==='fr'?'fr':'en');
 })();
 </script>
 </body>
